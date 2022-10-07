@@ -1,0 +1,57 @@
+﻿@model DomingoApp.Models.InvoiceModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Create New Invoice</h1>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="jobCardNo" class="control-label"></label>
+                            <input asp-for="jobCardNo" class="form-control" />
+                            <span asp-validation-for="jobCardNo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="customerID" class="control-label"></label>
+                            <input asp-for="customerID" class="form-control" />
+                            <span asp-validation-for="customerID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="jobTypeID" class="control-label"></label>
+                            <select asp-for="jobTypeID" class="form-control">
+                                <option value="">Please Select The Job Type</option>
+                                <option value="1">Full Conversion</option>
+                                <option value="2">Semi Conversion</option>
+                                <option value="3">Floor Boarding</option>
+                            </select>
+                            <span asp-validation-for="jobTypeID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-success" />
+                            <a asp-action="Index" class="btn btn-warning">Cancel</a>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

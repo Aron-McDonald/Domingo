@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DomingoApp.Models.JobCardModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Job Cards</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create a Job Card</a>
+</p>
+
+@*For the display of the JobCard info*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Job Card Number</th>
+            <th>Job Type ID</th>
+            <th>Job Type</th>
+            <th>Number Of Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jC in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => jC.jobCardNo)</td>
+            <td>@Html.DisplayFor(modelItem => jC.jobTypeID)</td>
+            <td>@Html.DisplayFor(modelItem => jC.jobType)</td>
+            <td>@Html.DisplayFor(modelItem => jC.NoOfDays)</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@jC.jobCardNo" class="btn btn-primary">Details</a>
+                <a asp-action="Delete" asp-route-id="@jC.jobCardNo" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

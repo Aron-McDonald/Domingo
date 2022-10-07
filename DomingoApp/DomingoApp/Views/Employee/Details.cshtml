@@ -1,0 +1,30 @@
+﻿@model DomingoApp.Models.EmployeeModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Employee Details</h2>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <ul>
+                        <li><label style="font-weight: bold">Employee Number: </label> @Html.DisplayFor(model => model.employeeNo)</li>
+                        <li><label style="font-weight: bold">Employee Name: </label>  @Html.DisplayFor(model => model.employeeName)</li>
+                    </ul>
+
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.employeeNo" class="btn btn-primary">Edit</a>
+                        <a asp-action="Index" class="btn btn-warning">Back</a>
+                    </div>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>

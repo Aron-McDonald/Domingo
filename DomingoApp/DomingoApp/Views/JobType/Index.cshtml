@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DomingoApp.Models.JobTypeModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Job Types</h1>
+
+@*For the display of the JobType info*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Job Type ID</th>
+            <th>Job Type</th>
+            <th>Daily Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jT in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => jT.jobTypeID)</td>
+                <td>@Html.DisplayFor(modelItem => jT.jobType)</td>
+                <td><label>R</label>@Html.DisplayFor(modelItem => jT.dailyRate)</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@jT.jobTypeID" class="btn btn-primary">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

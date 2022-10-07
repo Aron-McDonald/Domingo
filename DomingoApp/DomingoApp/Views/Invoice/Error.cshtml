@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="position:absolute; top:10%">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center" style="color:red">ERROR!</h2>
+            <div class="row">
+                <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img style="max-width:50px;max-height:50px" src="~/lib/Images/warning.png" />
+                        </div> 
+                        <div>
+                            <p style="color:ghostwhite; text-align:center">The JobCard Number or The Customer ID That You Have Entered Does Not Exist In The Database</p>
+                            <p class="text-info" style="text-align:center">Check</p>
+                            <p class="text-info" style="text-align:center">If there is a customer with the ID that you have entered</p>
+                            <p class="text-info" style="text-align:center">OR</p>
+                            <p class="text-info" style="text-align:center"> If a Job Card with the JobCard Number that you have entered exists</p>
+                        </div>
+                        <div class="text-center" style="position:center">
+                            <a asp-action="Create" class="btn btn-primary">Return To Create</a>
+                            <a asp-action="Index" class="btn btn-warning">Return To Invoices</a>
+                        </div>
+                    </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>

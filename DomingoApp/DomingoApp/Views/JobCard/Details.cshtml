@@ -1,0 +1,31 @@
+﻿@model DomingoApp.Models.JobCardModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Job Card Details</h1>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <ul>
+                        <li><label style="font-weight: bold">Job Card No. </label>  @Html.DisplayFor(model => model.jobCardNo)</li>
+                        <li><label style="font-weight: bold">Job Type ID </label>   @Html.DisplayFor(model => model.jobTypeID)</li>
+                        <li><label style="font-weight: bold">Job Type </label>      @Html.DisplayFor(model => model.jobType)</li>
+                        <li><label style="font-weight: bold">No. Of Days </label>   @Html.DisplayFor(model => model.NoOfDays)</li>
+                    </ul>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-warning">Back</a>
+                    </div>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>

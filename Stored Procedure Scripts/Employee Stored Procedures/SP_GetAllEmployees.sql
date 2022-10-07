@@ -1,0 +1,5 @@
+CREATE PROCEDURE SP_GetAllEmployees
+AS
+BEGIN
+	SELECT * FROM employee
+END

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DomingoApp.Models.InvoiceModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Invoices</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create a New Invoice</a>
+</p>
+
+@*For the display of the Invoice info*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Job Card Number</th>
+            <th>Customer Name</th>
+            <th>Customer Address</th>
+            <th>Job Type</th>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Material</th>
+            <th>Quantity</th>
+            <th>Daily Rate</th>
+            <th>No Of Days</th>
+            <th>Subtotal (Before VAT)</th>
+            <th>VAT</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => invoice.invoiceNo)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.jobCardNo)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.cutomerName)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.address)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.jobType)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.employeeNo)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.employeeName)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.material)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.quantity)</td>
+            <td><label>R</label>@Html.DisplayFor(modelItem => invoice.dailyRate)</td>
+            <td>@Html.DisplayFor(modelItem => invoice.NoOfDays)</td>
+            <td><label>R</label>@Html.DisplayFor(modelItem => invoice.subtotal)</td>
+            <td><label>R</label>@Html.DisplayFor(modelItem => invoice.VAT)</td>
+            <td><label>R</label>@Html.DisplayFor(modelItem => invoice.total)</td>
+        </tr>
+        }
+    </tbody>
+</table>
